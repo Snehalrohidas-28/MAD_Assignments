@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    // OPEN OTHER APP
+    
     private void openApp(String packageName) {
         PackageManager pm = getPackageManager();
         Intent intent = pm.getLaunchIntentForPackage(packageName);
