@@ -1,0 +1,7 @@
+<resources>
+
+    <style name="Theme.OptionMenu" parent="Theme.AppCompat.Light.DarkActionBar">
+
+    </style>
+
+</resources>
