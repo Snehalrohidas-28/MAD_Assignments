@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
     private void goBackToMainApp() {
 
         Intent intent = getPackageManager()
-                .getLaunchIntentForPackage("com.example.grid"); // change if needed
+                .getLaunchIntentForPackage("com.example.grid"); 
 
         if (intent != null) {
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
