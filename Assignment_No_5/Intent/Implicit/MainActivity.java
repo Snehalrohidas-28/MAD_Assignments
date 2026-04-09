@@ -1,66 +1,66 @@
-package com.example.intentexamples;
+package com.example.implicitexample;
 
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.Toast;
 
-import androidx.activity.EdgeToEdge;
-import androidx.activity.OnBackPressedCallback;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
-    EditText e;
-    Button b, btnBack;
+    Button btnWebsite, btnCall, btnSMS, btnEmail, btnCamera, btnMap;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
 
-        e = findViewById(R.id.e1);
-        b = findViewById(R.id.b1);
-        btnBack = findViewById(R.id.btnBack);
+        btnWebsite = findViewById(R.id.btnWebsite);
+        btnCall = findViewById(R.id.btnCall);
+        btnSMS = findViewById(R.id.btnSMS);
+        btnEmail = findViewById(R.id.btnEmail);
+        btnCamera = findViewById(R.id.btnCamera);
+        btnMap = findViewById(R.id.btnMap);
 
-        b.setOnClickListener(v -> {
-            String s = e.getText().toString().trim();
-
-            if (!s.isEmpty()) {
-                Intent i = new Intent(Intent.ACTION_DIAL);
-                i.setData(Uri.parse("tel:" + s));
-                startActivity(i);
-            } else {
-                Toast.makeText(this, "Enter phone number", Toast.LENGTH_SHORT).show();
-            }
+        btnWebsite.setOnClickListener(v -> {
+            Intent i = new Intent(Intent.ACTION_VIEW);
+            i.setData(Uri.parse("https://www.google.com"));
+            startActivity(i);
         });
 
-
-        btnBack.setOnClickListener(v -> goBackToMainApp());
-
-
-        getOnBackPressedDispatcher().addCallback(this, new OnBackPressedCallback(true) {
-            @Override
-            public void handleOnBackPressed() {
-                goBackToMainApp();
-            }
+        btnCall.setOnClickListener(v -> {
+            Intent i = new Intent(Intent.ACTION_DIAL);
+            i.setData(Uri.parse("tel:7083386469"));
+            startActivity(i);
         });
-    }
 
-    private void goBackToMainApp() {
+        btnSMS.setOnClickListener(v -> {
+            Intent i = new Intent(Intent.ACTION_VIEW);
+            i.setData(Uri.parse("sms:7083386469"));
+            i.putExtra("sms_body", "Hello from app");
+            startActivity(i);
+        });
 
-        Intent intent = getPackageManager()
-                .getLaunchIntentForPackage("com.example.grid"); // CHANGE if needed
+        btnEmail.setOnClickListener(v -> {
+            Intent i = new Intent(Intent.ACTION_SEND);
+            i.setType("message/rfc822");
+            i.putExtra(Intent.EXTRA_EMAIL, new String[]{"example@gmail.com"});
+            i.putExtra(Intent.EXTRA_SUBJECT, "Subject");
+            i.putExtra(Intent.EXTRA_TEXT, "Hello Email");
+            startActivity(Intent.createChooser(i, "Send Email"));
+        });
 
-        if (intent != null) {
-            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-            startActivity(intent);
-        } else {
-            Toast.makeText(this, "Main App not found", Toast.LENGTH_SHORT).show();
-            finish();
-        }
+        btnCamera.setOnClickListener(v -> {
+            Intent i = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+            startActivity(i);
+        });
+
+        btnMap.setOnClickListener(v -> {
+            Intent i = new Intent(Intent.ACTION_VIEW);
+            i.setData(Uri.parse("geo:0,0?q=Kolhapur"));
+            startActivity(i);
+        });
     }
 }
