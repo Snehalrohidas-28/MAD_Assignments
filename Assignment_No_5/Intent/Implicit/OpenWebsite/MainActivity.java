@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
         btnOpenWebsite.setOnClickListener(v -> {
             try {
                 Intent intent = new Intent(Intent.ACTION_VIEW);
-                intent.setData(Uri.parse("https://www.youtube.com/"));
+                intent.setData(Uri.parse("https://www.google.com/"));
                 startActivity(intent);
             } catch (Exception e) {
                 Toast.makeText(this, "No browser found", Toast.LENGTH_SHORT).show();
