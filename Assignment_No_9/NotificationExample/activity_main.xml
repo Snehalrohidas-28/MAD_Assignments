@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:background="#FFF8F0">
+
+<TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="60dp"
+    android:text="Notification Example"
+    android:textStyle="bold"
+    android:textSize="20dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="🍔 FoodieFast Alerts"
+        android:layout_marginTop="20dp"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="#E65100"
+        android:layout_marginBottom="20dp"/>
+
+
+    <EditText
+        android:id="@+id/foodTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:hint="Enter Food Name (e.g. Pizza)"
+        android:background="@android:drawable/edit_text"
+        android:padding="10dp"/>
+
+    <EditText
+        android:id="@+id/foodOffer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:hint="Enter Offer (e.g. 20% OFF)"
+        android:layout_marginTop="12dp"
+        android:padding="10dp"/>
+
+    <Button
+        android:id="@+id/sendBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Send Food Notification"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="#FF7043"
+        android:textColor="#FFFFFF"/>
+
+</LinearLayout>
