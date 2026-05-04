@@ -18,14 +18,12 @@ public class AlarmReceiver extends BroadcastReceiver {
 
         String channelId = "reminder_channel";
 
-
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             NotificationChannel channel = new NotificationChannel(
                     channelId,
                     "Reminder",
                     NotificationManager.IMPORTANCE_HIGH
             );
-            channel.setDescription("Reminder Notifications");
             channel.enableVibration(true);
             nm.createNotificationChannel(channel);
         }
