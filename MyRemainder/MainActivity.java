@@ -38,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
         updateDateTime();
 
         btnTime.setOnClickListener(v -> {
+
             MaterialTimePicker picker = new MaterialTimePicker.Builder()
                     .setTimeFormat(TimeFormat.CLOCK_24H)
                     .setHour(calendar.get(Calendar.HOUR_OF_DAY))
@@ -48,9 +49,16 @@ public class MainActivity extends AppCompatActivity {
             picker.show(getSupportFragmentManager(), "TIME_PICKER");
 
             picker.addOnPositiveButtonClickListener(view -> {
+
                 calendar.set(Calendar.HOUR_OF_DAY, picker.getHour());
                 calendar.set(Calendar.MINUTE, picker.getMinute());
                 calendar.set(Calendar.SECOND, 0);
+
+                if (calendar.getTimeInMillis() <= System.currentTimeMillis()) {
+                    calendar.add(Calendar.DAY_OF_MONTH, 1);
+                    Toast.makeText(this, "Time set for next day", Toast.LENGTH_SHORT).show();
+                }
+
                 updateDateTime();
             });
         });
@@ -81,11 +89,6 @@ public class MainActivity extends AppCompatActivity {
             }
 
             long time = calendar.getTimeInMillis();
-
-            if (time < System.currentTimeMillis()) {
-                Toast.makeText(this, "Select future time", Toast.LENGTH_SHORT).show();
-                return;
-            }
 
             Intent intent = new Intent(this, AlarmReceiver.class);
             intent.putExtra("title", title);
