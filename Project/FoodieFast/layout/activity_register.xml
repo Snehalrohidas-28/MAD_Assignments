@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="#000000">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/imgTop"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/burger" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-40dp"
+            android:background="@drawable/bg_card"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <!-- TITLE -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Register"
+                android:textColor="#FFA500"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Create your account to share your favorite recipes"
+                android:textColor="#AAAAAA"
+                android:textSize="13sp"
+                android:layout_marginBottom="16dp"
+                android:layout_marginTop="4dp"/>
+
+            <EditText
+                android:id="@+id/etName"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="Full Name"
+                android:padding="14dp"
+                android:background="@drawable/bg_input"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#888888"/>
+
+            <TextView
+                android:id="@+id/tvNameError"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#FF5555"
+                android:textSize="12sp"
+                android:visibility="gone"/>
+
+
+            <EditText
+                android:id="@+id/etEmail"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:hint="Email"
+                android:padding="14dp"
+                android:background="@drawable/bg_input"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#888888"/>
+
+            <TextView
+                android:id="@+id/tvEmailError"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#FF5555"
+                android:textSize="12sp"
+                android:visibility="gone"/>
+
+            <EditText
+                android:id="@+id/etPhone"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:hint="Phone Number"
+                android:inputType="phone"
+                android:padding="14dp"
+                android:background="@drawable/bg_input"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#888888"/>
+
+            <TextView
+                android:id="@+id/tvPhoneError"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#FF5555"
+                android:textSize="12sp"
+                android:visibility="gone"/>
+
+
+            <EditText
+                android:id="@+id/etPassword"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:hint="Password"
+                android:inputType="textPassword"
+                android:padding="14dp"
+                android:background="@drawable/bg_input"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#888888"/>
+
+            <TextView
+                android:id="@+id/tvPasswordError"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#FF5555"
+                android:textSize="12sp"
+                android:visibility="gone"/>
+
+            <EditText
+                android:id="@+id/etConfirm"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:hint="Confirm Password"
+                android:inputType="textPassword"
+                android:padding="14dp"
+                android:background="@drawable/bg_input"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#888888"/>
+
+            <TextView
+                android:id="@+id/tvConfirmError"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#FF5555"
+                android:textSize="12sp"
+                android:visibility="gone"/>
+
+            <Button
+                android:id="@+id/btnRegister"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/bg_button"
+                android:text="Register"
+                android:textAllCaps="false"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvLogin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="16dp"
+                android:text="Already have an account? Login"
+                android:textColor="#FFA500"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>
